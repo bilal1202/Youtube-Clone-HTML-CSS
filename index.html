@@ -1,0 +1,547 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- CSS File -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- for favicon link -->
+    <link rel="icon" type="image/x-icon" href="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png">
+    
+    <title>Youtube</title>
+  </head>
+  <body>
+    <!-- Header Starts -->
+    <div class="header">
+      <div class="header__left">
+        <i id="menu" class="material-icons">menu</i>
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAS0AAACnCAMAAABzYfrWAAAAwFBMVEX/////AAAoKCgAAAAkJCQVFRUbGxsiIiJAQECkpKSDg4NJSUnt7e0GBgb29vbW1tYPDw+5ubkwMDBUVFQ7Ozv/T09wcHCZmZn/7u4YGBgSEhJsbGzn5+f/6OjPz8+fn5/Dw8P/IyN+fn7x8fH/lpb/Kir/w8P/39+Ojo5eXl7/kJCqqqr/vLz/cnL/aGj/MTH/paX/zMz/19dPT0//hYX/WFj/sbH/QkL/ERH/qKj/e3v/V1f/Skr/Ojr/m5v/eHj+9Bn6AAAJJUlEQVR4nO2c6XqqOhSGKSCoyKBVK2gtalu1trXz7p567v+uDiQrEAZLcEP1nL3eH30aJNNHhpWVgCQhCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgyJ8yCjknfw9dlGNidL58vH37uLx5ubt//flte3U1C3g/iQnDs6vtdvB6f//j5vLj++31cjmyDl3wL2Z0fXm/nZ3syfvs18v35aHr8FWc3+2rE8/29tD1iJkPCeNF9Ul/r0KrkG9HM671XS1E6VSe8ktVYgWc8wk3DUJ/Gl2x4FJvUqqEc4iWpr8zRlOVQ6pX66FCsU7e+ZSHrhriXERXbIVc0XvlijimCaXRlZ0x6lLrvEqxTk7uuKS7DimyPo6utBrkijYvV8axLufi7IxRl1r31arF98WOArVKV9v0y5XxaNQaVSzWyQuXeD9d5h69YJacqo5Grduq1eJHrpVLK+VDeAJd87RkIccaHagimWDg+vJxq8oJkcJZEVOTlNldQdinajUucouym3m/SeiBWD0Dwjtj1KTWt8rVeuRSh7a0hiC0NcXes7BskmgX3lmTWpWLdfLApc5GdQgapA5qSfsh5tBqVWw/hPzgkt94fGOyNFrZ4b6lPbRaT9Wr9colP6E2hLchIZuGnO6+pT20WtfVq3XFpy+TUoM1ylra3lU4tFqFC+r3ohuy8Om3SedTDRIYkoD+vHdpD63WTVHVfz79/hO1fGpDKMRfSG1T94z9OD0bG03jeb7h1tjWBKBBFqL+xqRaC/itkxORV8tenTaNYar7W36QuWGs290SghaaWwNJeiupFu+HsECt0A0BtqkCLoluX2loerA21jxlHenVVSgujQ4hmCaSap3Bb7Th2uxWK6mWNVTcIBdN6fN+jws1uEoyd8y58MqicJU4CMtczoRNOFGf9cgehXam0x/GSmyay7rCHj2sxMHKsGClaeapdUFDsDKwaepyUq3Fou+yPOTIIW4ZZpy37KqizeuniFqStHwtoRZvnkKViBuC2qbgkRh7coKoxVWrVqepRVk0ouHOiC+SFEQNwEJTfgA3Xm+F1brmM2CVCP49Jc3MI61ow9wTbPGn9qwa1NKHrGWRrKHLnTmQpw6ZeytJiMIpbxDdKuw1TKglafCQJUmP/mOWhaw6Ro/WWQafYbVqBd3PcR3WksDQW0Cz9prrHojZENu1Kqx6rJY0+iGm1lsiB2o2OL40IdVRm0QTWjVVDkbeFa202q9DLVXrWos5PBBYRIDZ511EpRN1uJVRKxi+BiJqPSRyoNUPzAb6j0Ya/VrnHjbzgtk1qOXYXIg+KRgRaA4LhU+xWrWC4WtWrNZHIkaH1CIY2+kgT0ZzC7x7DhlIwDPRaFWvFviK4E5ZD3+zaA6wvoCFviEiVrHndJCO8lEY5TIZgTSdoPb0kbphgWHBCGX0efd9xXMitbGmkAwJQubgZAMviSaiVrELIqOWNCraqk2pBW3KolVbc5KA34tp16xBLWpJsQ0C0tm7dNiCIZ8uzaLpsnK1JOnp16dRbpJ3Uweq0yXFot6IM5fvDNFmh1WXWguYFclgDpmDWswZLrLBudxLrYIFU0otiTxL9VSNu8Zc42vN1HI6dallgYuaKASZw2YBaGeKuHP3a1sFfTGtFp0A6WhKzQQ2WCTVIkrWohbbayIte53YpYNE6lPrsiBKWq1NvMiBep5+tVpgpJBpN1ctoa2CPebE21lRlNQoD2YpX0Q6bX+hWgan1uneapW2t54E7NOPdCa9yNtgWp+pNf1KtWDcatWn1uifYq3StrwUzdLxVtkxqKUapwHrJr+QqFQtwXX1WzoTn3VFaq4fh1qyqodAsxdTq4QP4vpKTKyUDyJgAR6SqExHoVYCMbUKne5MrRL+wIxa4ECNt13/q2oVDtpUrVEZX/NjJhcwAXW27XoUajUUHiG1hPzyJQ+mZg83s5XOManlbToTDiF3oMiez6O4k5lwnslFUK367K3mTuu0FMX7iaPShwezuaTVWh/Kls+ufEpRaBTMymolotah1olkVb3nac6Qyo8GBvoWq8V8EEmPjbuoSy3mqyUKtRM+CGvTndqTjtgGbM1nbHaolQzDQRwqUP3eQIgG/q2J4sQ73EXUfH5rh1pJ3+mU9zvXopad09dhXcH8zhVtkZUms6jOqpXwLbPi037JVkk6Lf5nakEIvPufqbWBXQzinYWmDIdXIHNXTK2S1oEAWVM+oxYcEoTKwChGndBsw4G6fu3P1GJ+M4WvdkotGg9MLJ3oCoMYNOwVzVwXEksS3FEtQc6bUWm1WPEb4fNlTnPqhIYnTzvKAmb+fLVYMyRjt83WMwm11CbxXsONdC+TTYpemJ8l89IVUva4UTE5mWTU2kBD8Fod+5l/8JLFHK3uhX+m6Wwyy1OLCSvLG79tqnqOWrLemLeGLEk4meLTeHrTn/jPzLAXU6vyYT5nkM+qxbpiuFhjtYQzSdGi13Xc4Jn3d6slRR5sz9GCxPPaliprDZaXyt6g6bFDGIrJtoFF394tc9ZIhCcRteIzNgyNna9kzY6q1KGWd75abe5gUSBFVi3VeOYcDg47lNhNZ24Kv+5QscWVu6OWVUsamony6jo7cWZxL6gE7Y1OAflqTbhaB+O5oafV0laT+EydHr/NOE/KZcYvuRVSuFQsRe7br2ceeS0ncVC+rcQtQ1eM+HjelPVNXdmETY280ANqkYAaHVvbMC00JxiS2uQtRqpWXyf/+9JUg0NHmsZtsK7izFVXETy9Ranynbu8fhjYkb1+SC/xWqI9VBXTazQcxXtOHKG1DcVpNExnHUrky2FMmaq1gXSi6vm94FZP8Yad6FdqqD2TG8Mjkou2rjiOaY4TxyVJ5k7DMZVeu9x7uNW9GfVe7r19y/Y3rVZ3mjn2Oem2Wr7YYVB709pMP1/lWXa3m5Oa7XdbXb+kVCGPnx9sECW97fq/Zflwt93jRYKI2eDm+i/7hsZo+RR+aeTl/vXn7+1V6isjHO/v5IMjg9fwcyMPb4/L86P5ssFBsawR/YgNgf7/132HBUEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEGkfwF24tJTDVjirgAAAABJRU5ErkJggg=="/>
+      </div>
+
+      <div class="header__search">
+        <form action="">
+          <input type="text" placeholder="Search" />
+          <button><i class="material-icons">search</i></button>
+        </form>
+      </div>
+
+      <div class="header__icons">
+        <i class="material-icons display-this">search</i>
+        <i class="material-icons">videocam</i>
+        <i class="material-icons">apps</i>
+        <i class="material-icons">notifications</i>
+        <i class="material-icons display-this">account_circle</i>
+      </div>
+    </div>
+    <!-- Header Ends -->
+
+    <!-- Main Body Starts -->
+    <div class="mainBody">
+      <!-- Sidebar Starts -->
+
+      <div class="sidebar">
+        <div class="sidebar__categories">
+          <div class="sidebar__category">
+            <i class="material-icons">home</i>
+            <span>Home</span>
+          </div>
+          <div class="sidebar__category">
+            <i class="material-icons">local_fire_department</i>
+            <span>Trending</span>
+          </div>
+          <div class="sidebar__category">
+            <i class="material-icons">subscriptions</i>
+            <span>Subcriptions</span>
+          </div>
+        </div>
+        <hr />
+        <div class="sidebar__categories">
+          <div class="sidebar__category">
+            <i class="material-icons">library_add_check</i>
+            <span>Library</span>
+          </div>
+          <div class="sidebar__category">
+            <i class="material-icons">history</i>
+            <span>History</span>
+          </div>
+          <div class="sidebar__category">
+            <i class="material-icons">play_arrow</i>
+            <span>Your Videos</span>
+          </div>
+          <div class="sidebar__category">
+            <i class="material-icons">watch_later</i>
+            <span>Watch Later</span>
+          </div>
+          <div class="sidebar__category">
+            <i class="material-icons">thumb_up</i>
+            <span>Liked Videos</span>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <!-- Sidebar Ends -->
+
+      <!-- Videos Section -->
+      <div class="videos">
+        <h1>Recommended</h1>
+
+        <div class="videos__container">
+          <!-- Single Video starts -->
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/sUKwTVAc0Vo/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img src="https://yt3.ggpht.com/HcUol0AIAdiT8tUDRq0IeHEJg0zGOzBklrB7bf_2x-hjhbm5MmpQELkl_3PGogTpnDuByY-U4Q=s68-c-k-c0x00ffffff-no-rj" alt="" />
+              </div>
+              <div class="title">
+                <h3>
+                  ARY NEWS LIVE | Latest Pakistan News 24/7 | Headlines , Bulletins, Special & Exclusive Coverage
+                </h3>
+                <a href="">ARY News</a>
+                <span>19M Views • Streamed 3 Years Ago</span>
+              </div>
+            </div>
+          </div>
+          <!-- Single Video Ends -->
+
+          <!-- Single Video starts -->
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/wt8n7j32z5s/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img src="https://yt3.ggpht.com/ytc/AL5GRJUn-Xqy0KklFcCkxEiwe7-y0f7dk90vlBK3bULyjw=s68-c-k-c0x00ffffff-no-rj" alt="" />
+              </div>
+              <div class="title">
+                <h3>The side of PAKISTAN you NEVER hear about.</h3>
+                <a href="">Mark Harrison </a>
+                <span>295K Views • 3 Weeks Ago</span>
+              </div>
+            </div>
+          </div>
+          <!-- Single Video Ends -->
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/EvwvHrtL1xY/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AAUvwnh53ZRIGnyzC28QrfuggCINb3cfNbNWo4Uc6qR9=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>YOU: Season 4 Part 2 | Official Trailer | Netflix</h3>
+                <a href="">Netflix</a>
+                <span>99k Views • 18 Hours Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/ImeNgCwZ_nI/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AL5GRJV4lPBLMPkM8_X2eK3zoBfPFjO0QY18nuNbM04o=s68-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>Ban-nistan - Wikipedia | Junaid Akram</h3>
+                <a href=""> Junaid Akram</a>
+                <span>171K Views • 8 Days Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/lkIFF4maKMU/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AL5GRJUEZDXANi-9AD9yJzNTU1R0_cA1Brd6nLXLZaG31g=s68-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>100+ JavaScript Concepts you Need to Know</h3>
+                <a href="">Fireship</a>
+                <span>179K • 2 Months Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/CPcyIfcMEgQ/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AL5GRJVn2OSFuqK2TGoVISvFGL3u74ULalXRCvZlBMFg=s68-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>Contourcast Episode 1</h3>
+                <a href=""> Contout</a>
+                <span>1.5K Views • 2 Days Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/R6RX2Zx96fE/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/Ad-wrNL8xHdy7nvQ8dQTtm5VKAGDzotXS5RolUVHnR3S5Q6PVyj9dAnhPOyPAxaBhDdr0xwA=s68-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>Full Stack Web Development Course 2023 | Complete Full Stack Developer Course | Simplilearn</h3>
+                <a href=""> Simplilearn </a>
+                <span>2.82M Views • 1 Month Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/mU6anWqZJcc/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AAUvwnifaQZvAunS0OFb2y_cieoVjLCVjqQW8Exf3BC1gg=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>Learn HTML5 and CSS3 From Scratch - Full Course</h3>
+                <a href=""> freeCodeCamp.org </a>
+                <span>5.3M Views • 3 Years Ago</span>
+              </div>
+            </div>
+          </div>
+         
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/bq29w9MJKTQ/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img src="https://yt3.ggpht.com/ytc/AL5GRJXjXiwZeDrqvcm5zqWRFJNt4OIH9WO-unvxTk1YEQ=s48-c-k-c0x00ffffff-no-rj" alt="" />
+              </div>
+              <div class="title">
+                <h3>
+                  Coke Studio Season 9| Aaja Re Moray Saiyaan| Zeb Bangash
+                </h3>
+                <a href="">Coke Studio</a>
+                <span>11M Views • 6 Years Ago</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/ER9SspLe4Hg/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img src="https://yt3.ggpht.com/ytc/AL5GRJX7LBvNaQFl0ODpVbrt2F4ajG_wY0fKpZGsEqi8Jw=s68-c-k-c0x00ffffff-no-rj" alt="" />
+              </div>
+              <div class="title">
+                <h3>Introduction to JavaScript + Setup | JavaScript Tutorial in Hindi #1</h3>
+                <a href="">CodeWithHarry</a>
+                <span>1.2M Views • 2 Years Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/eC0npETF4PY/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AAUvwnh53ZRIGnyzC28QrfuggCINb3cfNbNWo4Uc6qR9=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>Full Swing | Official Trailer | Netflix</h3>
+                <a href="">Netflix</a>
+                <span>928K Views • 11 Days Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/WcIcVapfqXw/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/lwPYJMKoTNR2hs_hrXRFcTy0aQteNHEJnGwyfp0cwvjhJVZW6HWa6CTm_Bf99Y71U2V_FZMZenQ=s48-c-k-c0x00ffffff-no-nd-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>Rema, Selena Gomez - Calm Down (Official Music Video)</h3>
+                <a href=""> Selena Gomez</a>
+                <span>32.4M Views • 1 Month Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/2Ji-clqUYnA/maxresdefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AAUvwniaHN7MZyFEiNvdHuKMzIWnDF604Z2--O4GCMq-FA=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>Javascript Fundamentals</h3>
+                <a href="">Coding Addict</a>
+                <span>179K • 8 Months Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/3PHXvlpOkf4/maxresdefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AAUvwnifaQZvAunS0OFb2y_cieoVjLCVjqQW8Exf3BC1gg=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>Build 15 JavaScript Projects - Vanilla JavaScript Course</h3>
+                <a href=""> freeCodeCamp.org </a>
+                <span>470K Views • 8 Months Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/GhKFQOA28Nk/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AAUvwnhIz_0Su6HhW6Ym50QCroJCAnF10X9xnnMDboN2=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>Is Learning TypeScript A Waste Of Time?</h3>
+                <a href=""> Web Dev Simplified </a>
+                <span>43K Views • 5 Days Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/qkQr42DmaEE/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AAUvwnifaQZvAunS0OFb2y_cieoVjLCVjqQW8Exf3BC1gg=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>3 Ways to Code a BuzzFeed Clone (JavaScript + TypeScript + JSONServer + Database + API + Node.js)</h3>
+                <a href=""> freeCodeCamp.org </a>
+                <span>43K Views • 7 Days Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/PpXUTUXU7Qc/maxresdefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img src="profile.png" alt="" />
+              </div>
+              <div class="title">
+                <h3>
+                  Top 5 Programming Languages to Learn in 2021 | Best Programming Languages to Learn
+                </h3>
+                <a href="">FutureCoders</a>
+                <span>10M Views • 3 Months Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/YpTmcCBBdTE/maxresdefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img src="profile.png" alt="" />
+              </div>
+              <div class="title">
+                <h3>Build A Password Generator with React JS - Beginners Tutorial</h3>
+                <a href="">FutureCoders</a>
+                <span>10M Views • 3 Months Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/TDg0m2Q3H8c/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AAUvwnh53ZRIGnyzC28QrfuggCINb3cfNbNWo4Uc6qR9=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>MH370: The Plane That Disappeared | Official Trailer | Netflix</h3>
+                <a href="">Netflix</a>
+                <span>33K Views • 12 Hours Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/d2na6sCyM5Q/maxresdefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AAUvwnhESPVEatju_1yE-03-KLeSrnSLc5yy0RcvhPd5Lg=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>DON'T EVER GIVE UP - Elon Musk (Motivational Video)</h3>
+                <a href=""> Chispa Motivation</a>
+                <span>10M Views • 1 Month Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/PkZNo7MFNFg/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AL5GRJXPR4dSz0wwP-elkeiWUMnfZlCtNZP8Rd-tmFOZYg=s68-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>Learn JavaScript - Full Course for Beginners</h3>
+                <a href="">freeCodeCamp</a>
+                <span>17M • 4 Years Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/5PdEmeopJVQ/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AAUvwnifaQZvAunS0OFb2y_cieoVjLCVjqQW8Exf3BC1gg=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>Full Stack Development with Java Spring Boot, React, and MongoDB – Full Course</h3>
+                <a href=""> freeCodeCamp.org </a>
+                <span>150K Views • 3 Wee Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/6w15JIb7UXc/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/zgMN9BuSQByG1SrpmLwcNB3MQhjDhS_pl9H1h7TaRievMfS4UpU7Z36j77z5_hnIW4N8uFX3NA=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>Keh Do Ke | Official Lyric Video | Plan A Plan B | Riteish, Tamannaah | Bann, Vivek, Mali</h3>
+                <a href=""> Netflix </a>
+                <span>875K Views • 1 Year Ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="video__thumbnail">
+              <img src="https://img.youtube.com/vi/WXsD0ZgxjRw/sddefault.jpg" alt="" />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="https://yt3.ggpht.com/ytc/AAUvwnifaQZvAunS0OFb2y_cieoVjLCVjqQW8Exf3BC1gg=s48-c-k-c0x00ffffff-no-rj"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>APIs for Beginners 2023 - How to use an API (Full Course / Tutorial)</h3>
+                <a href=""> freeCodeCamp.org </a>
+                <span>120K Views • 9 Days Ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+    <!-- Main Body Ends -->
+  </body>
+</html>
